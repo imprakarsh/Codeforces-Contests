@@ -1,3 +1,3 @@
 # Codeforces-Contests
 ---
-Contain solutions to at least the first three problems of contests starting from 23rd Nov.
+Contain solutions to the first three problems of 50-contests.
