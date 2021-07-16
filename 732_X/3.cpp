@@ -1,25 +1,32 @@
-
     #include <bits/stdc++.h>
     #define int long long 
     using namespace std;
      
     void solve() { 
 		int n; cin >> n; 
-		deque<int> v; 
+		vector<int> giv(n), v(n); 
+		for (auto &i : giv) cin >> i; 
+		v = giv; 
+		sort(v.begin(), v.end()); 
+		map<int, pair<int, int>> mp; 
+		map<int, pair<int, int>> diff;
+		
 		for (int i = 0; i < n; i++) { 
-			int a; cin >> a; 
-			if (a % 2 == 0) { 
-				v.push_front(a); 
+			if (i % 2 == 0) { 
+				mp[v[i]].first ++; 
 			}
-			else v.push_back(a); 
+			else mp[v[i]].second ++; 
 		}
-		int cnt = 0; 
+		
 		for (int i = 0; i < n; i++) { 
-			for (int j = i + 1; j < n; j++) { 
-				if (__gcd(v[i], 2*v[j]) > 1) cnt++; 
+			if (i % 2 == 0) { 
+				diff[giv[i]].first++; 
 			}
+			else diff[giv[i]].second++; 
 		}
-		cout << cnt << '\n'; 
+		if (mp == diff) cout << "YES\n"; 
+		else cout << "NO\n"; 
+		 
     }
     int32_t main(){
     	iostream::sync_with_stdio(false); 

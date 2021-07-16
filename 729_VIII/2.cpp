@@ -1,25 +1,24 @@
-
     #include <bits/stdc++.h>
     #define int long long 
     using namespace std;
      
     void solve() { 
-		int n; cin >> n; 
-		deque<int> v; 
-		for (int i = 0; i < n; i++) { 
-			int a; cin >> a; 
-			if (a % 2 == 0) { 
-				v.push_front(a); 
-			}
-			else v.push_back(a); 
+		int n, a, b; 
+		cin >> n >> a >> b; 
+		int st = 1; 
+		if (b == 1) {
+			cout << "Yes\n"; 
+			return ; 
 		}
-		int cnt = 0; 
-		for (int i = 0; i < n; i++) { 
-			for (int j = i + 1; j < n; j++) { 
-				if (__gcd(v[i], 2*v[j]) > 1) cnt++; 
+		while (st <= n) { 
+			if (st % b == n % b) { 
+				cout << "Yes\n"; 
+				return ; 
 			}
+			st = st * a; 
+			if (a == 1) break; 
 		}
-		cout << cnt << '\n'; 
+		cout << "No\n";   
     }
     int32_t main(){
     	iostream::sync_with_stdio(false); 

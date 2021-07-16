@@ -3,17 +3,13 @@
 using namespace std;
 
 void solve() { 
-	string s; cin >> s; 
-	int x[2] = {-1, -1}; 
-	int ans = 0; 
-	for (int i = 0; i < (int)s.size(); i++) { 
-		int a = s[i] - '0'; 
-		if (a == 0 || a == 1) { 
-			x[(i%2)^a] = i; 
-		}
-		ans += i - min(x[0], x[1]); 
-	 }
-	 cout << ans << endl; 
+	int n; cin >> n; 
+	int sm = 0; 
+	for (int i = 0; i < n; i++) { 
+		int a; cin >> a; 
+		sm += a; 
+	}
+	cout << (sm % n) * ( n - (sm % n)) << '\n';  
 	
 }
 int32_t main(){

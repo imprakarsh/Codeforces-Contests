@@ -1,7 +1,5 @@
-3
-28
-qaabzwsxedcrfvtgbyhnujmiklop
-13
-cleanairactbd
-10
-aannttoonn
+4
+3 7 9 5
+4 5 6 9
+5 3 8 1
+6 5 3 2
